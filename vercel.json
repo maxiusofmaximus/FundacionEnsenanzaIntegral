@@ -2,11 +2,19 @@
   "version": 2,
   "builds": [
     {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/api_guardar_contacto.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
     {
       "src": "/api/api_guardar_contacto",
       "dest": "api/api_guardar_contacto.js"
