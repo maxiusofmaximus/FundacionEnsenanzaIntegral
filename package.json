@@ -1,5 +1,5 @@
 {
-  "name": "fundacionensenanzaintegral-main",
+  "name": "fundacionensenanzaintegral",
   "version": "1.0.0",
   "description": "Este proyecto es una página web que permite a los usuarios enviar datos a una base de datos gestionada por Supabase. A continuación, se describen los pasos realizados para configurar el proyecto y las instrucciones para su uso.",
   "main": "index.js",
