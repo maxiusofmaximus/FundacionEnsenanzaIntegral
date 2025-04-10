@@ -305,9 +305,10 @@
             };
 
             $.ajax({
-                url: 'api/api_guardar_contacto',
+                url: '/api/api_guardar_contacto',
                 method: 'POST',
-                data: datos,
+                contentType: 'application/json',
+                data: JSON.stringify(datos), // Convertir los datos a JSON
                 success: function (respuesta) {
                     Swal.fire({
                         icon: 'success',
