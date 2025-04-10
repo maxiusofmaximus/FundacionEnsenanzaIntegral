@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/api_guardar_contacto.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/api_guardar_contacto",
+      "dest": "api/api_guardar_contacto.js"
+    }
+  ]
+}
