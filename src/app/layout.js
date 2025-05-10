@@ -1,5 +1,6 @@
 import './globals.css';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export const metadata = {
   title: 'Fundación Enseñanza Integral',
@@ -9,6 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
+      <Head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </Head>
       <body>
         <nav className="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
           <div className="container">

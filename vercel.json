@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/app/layout.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/pages/api/sitemap.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/imagenes/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/src/app/layout.js"
+    },
+    {
+      "src": "/api/sitemap",
+      "dest": "/src/pages/api/sitemap.js"
+    },
+    {
+      "src": "/imagenes/(.*)",
+      "dest": "/public/imagenes/$1"
+    }
+  ]
+}

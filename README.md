@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fundación Enseñanza Integral
 
-## Getting Started
+Este proyecto es una página web que permite a los usuarios enviar datos a una base de datos gestionada por Supabase. A continuación, se describen los pasos realizados para configurar el proyecto y las instrucciones para su uso.
 
-First, run the development server:
+## Configuración del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Instalación de Dependencias
+- Asegúrate de tener instalado Node.js.
+- Ejecuta el siguiente comando en la raíz del proyecto para instalar las dependencias:
+  ```bash
+  npm install
+  ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configuración de Supabase
+1. Crea un proyecto en [Supabase](https://supabase.com/).
+2. Configura una tabla llamada `contactos` con las siguientes columnas:
+   - `id` (SERIAL PRIMARY KEY)
+   - `nombre` (VARCHAR)
+   - `correo` (VARCHAR)
+   - `telefono` (VARCHAR)
+   - `mensaje` (TEXT)
+3. Ve a la sección **Authentication > URL Configuration** y asegúrate de que la URL del sitio sea `http://localhost:3000`.
+4. En la sección **Table Editor**, habilita las políticas de seguridad (RLS) y crea una política para permitir inserciones públicas:
+   ```sql
+   create policy "Allow insert for public"
+   on "public"."contactos"
+   as PERMISSIVE
+   for INSERT
+   to public
+   using (true);
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Configuración del Archivo `.env`
+- Configura las variables de entorno necesarias en el archivo `.env`:
+  ```env
+  SUPABASE_URL=tu_supabase_url
+  SUPABASE_KEY=tu_supabase_key
+  ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Iniciar el Servidor
+- Usa el siguiente comando para iniciar el servidor de desarrollo:
+  ```bash
+  npm run dev
+  ```
 
-## Learn More
+## Despliegue en Vercel
+1. **Crear un Repositorio en GitHub**:
+   - Sube el proyecto a un repositorio en GitHub.
 
-To learn more about Next.js, take a look at the following resources:
+2. **Configurar Vercel**:
+   - Ve a [Vercel](https://vercel.com/) y conecta tu repositorio.
+   - Configura las variables de entorno en Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Despliegue Automático**:
+   - Cada vez que hagas un push a la rama principal, Vercel desplegará automáticamente la última versión del proyecto.
