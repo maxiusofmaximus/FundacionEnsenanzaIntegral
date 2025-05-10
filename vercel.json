@@ -10,15 +10,15 @@
       "use": "@vercel/node"
     },
     {
+      "src": "api/sitemap.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "public/images/*",
       "use": "@vercel/static"
     },
     {
       "src": "googlede20d760bd71d845.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "sitemap.xml",
       "use": "@vercel/static"
     }
   ],
@@ -41,7 +41,7 @@
     },
     {
       "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
+      "dest": "/api/sitemap.js"
     }
   ]
 }
