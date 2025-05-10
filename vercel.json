@@ -16,6 +16,10 @@
     {
       "src": "googlede20d760bd71d845.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "sitemap.xml",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -34,6 +38,10 @@
     {
       "src": "/googlede20d760bd71d845.html",
       "dest": "/googlede20d760bd71d845.html"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
     }
   ]
 }
