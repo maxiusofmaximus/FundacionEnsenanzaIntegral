@@ -12,6 +12,10 @@
     {
       "src": "public/images/*",
       "use": "@vercel/static"
+    },
+    {
+      "src": "googlede20d760bd71d845.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -26,6 +30,10 @@
     {
       "src": "/images/(.*)",
       "dest": "/public/images/$1"
+    },
+    {
+      "src": "/googlede20d760bd71d845.html",
+      "dest": "/googlede20d760bd71d845.html"
     }
   ]
 }
