@@ -6,3 +6,7 @@ Thumbs.db
 node_modules/
 
 .vercel
+
+# Ignora archivos de entorno
+.env
+.env.*
